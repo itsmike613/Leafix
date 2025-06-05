@@ -5,14 +5,16 @@ let fuse;
 fetch('Source/Data/index.json')
     .then(response => response.json())
     .then(data => {
-        plants = data;
+        plants = Array.isArray(data) ? data : data.plants || [];
+        if (!Array.isArray(plants)) plants = [];
         fuse = new Fuse(plants, {
             keys: ['identification.common_names', 'identification.scientific_name', 'identification.family'],
             threshold: 0.3
         });
         renderPlantList();
         setupEventListeners();
-    });
+    })
+    .catch(error => console.error('Error loading index.json:', error));
 
 function renderPlantList() {
     const searchTerm = document.querySelector('.form-control').value.trim();
@@ -23,7 +25,7 @@ function renderPlantList() {
             selectedFilters.some(filter => plant.classification.indoor_vs_outdoor === filter || plant.classification.indoor_vs_outdoor === 'Both')
         );
     }
-    document.querySelector('.row.g-3.g-xl-5').innerHTML = displayedPlants.map(plant => `
+    document.getElementById('plant-list').innerHTML = displayedPlants.map(plant => `
         <div class="col-lg-4 col-sm-6">
             <div class="card">
                 <div class="p-3 d-flex align-items-center justify-content-between gap-6 border-0 py-2">
@@ -42,23 +44,22 @@ function renderPlantList() {
 }
 
 function updateInspectTab(plant) {
-    const inspectBody = document.querySelector('#inspect .card-body');
+    const inspectBody = document.getElementById('inspect-body');
     inspectBody.innerHTML = plant ? `
-    <p>Name: <span>${plant.identification.common_names[0]}</span></p>
-    <p>Family: <span>${plant.identification.family}</span></p>
-    <p>Ideal Temp Max: <span>${plant.care.temperature.max_f}°F</span></p>
-    <p>Ideal Temp Min: <span>${plant.care.temperature.min_f}°F</span></p>
-    <img class="avatar rounded flex-none" src="${plant.media.thumbnail}">
-    ${plant.media.full_images.map(img => `<img class="avatar rounded flex-none" src="${img}">`).join('')}
-  ` : `
-    <p>No plant selected. Please select a plant from the Database tab.</p>
-    <button class="btn btn-primary" id="go-to-database">Go to Database</button>
-  `;
-    if (!plant) document.getElementById('go-to-database').addEventListener('click', () => $('#database-tab').tab('show'));
+        <p>Name: <span>${plant.identification.common_names[0]}</span></p>
+        <p>Family: <span>${plant.identification.family}</span></p>
+        <p>Ideal Temp Max: <span>${plant.care.temperature.max_f}°F</span></p>
+        <p>Ideal Temp Min: <span>${plant.care.temperature.min_f}°F</span></p>
+        <img class="avatar rounded flex-none" src="${plant.media.thumbnail}">
+        ${plant.media.full_images.map(img => `<img class="avatar rounded flex-none" src="${img}">`).join('')}
+    ` : `
+        <p>No plant selected. Please select a plant from the Database tab.</p>
+        <button class="btn btn-primary" id="go-to-database">Go to Database</button>
+    `;
 }
 
 function setupEventListeners() {
-    document.querySelector('.row.g-3.g-xl-5').addEventListener('click', e => {
+    document.getElementById('plant-list').addEventListener('click', e => {
         if (e.target.classList.contains('btn-dark')) {
             selectedPlant = plants.find(p => p.id === e.target.dataset.plantId);
             updateInspectTab(selectedPlant);
@@ -67,7 +68,11 @@ function setupEventListeners() {
     });
     document.querySelector('.form-control').addEventListener('input', renderPlantList);
     document.querySelectorAll('#filters input').forEach(input => input.addEventListener('change', renderPlantList));
-    $('a[data-bs-toggle="tab"]').on('shown.bs.tab', e => {
-        if (e.target.id === 'inspect-tab') updateInspectTab(selectedPlant);
+    $('#filters-tab').on('shown.bs.tab', () => updateInspectTab(selectedPlant));
+    $('#inspect-tab').on('shown.bs.tab', () => updateInspectTab(selectedPlant));
+    document.addEventListener('click', e => {
+        if (e.target.id === 'go-to-database') {
+            $('#database-tab').tab('show');
+        }
     });
 }
