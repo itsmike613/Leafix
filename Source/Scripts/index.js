@@ -2,7 +2,7 @@ let plants = [];
 let selectedPlant = null;
 let fuse;
 
-fetch('index.json')
+fetch('Source/Data/index.json')
     .then(response => {
         if (!response.ok) throw new Error('Failed to fetch index.json');
         return response.json();
