@@ -20,7 +20,7 @@ fetch('Source/Data/index.json')
         console.log('Loaded plants:', plants);
         if (!Array.isArray(plants)) plants = [];
         fuse = new Fuse(plants, {
-            keys: ['identification.common_names', 'identification.scientific_name', 'identification.family'],
+            keys: ['identification.names', 'identification.scientific_name', 'identification.family'],
             threshold: 0.3,
             includeScore: true
         });
@@ -36,7 +36,7 @@ function renderPlantList() {
 
     if (selectedFilters.length) {
         displayedPlants = displayedPlants.filter(plant =>
-            selectedFilters.some(filter => plant.classification?.indoor_vs_outdoor === filter || plant.classification?.indoor_vs_outdoor === 'Both')
+            selectedFilters.some(filter => plant.classification?.placement === filter || plant.classification?.placement === 'Both')
         );
     }
 
@@ -53,7 +53,7 @@ function renderPlantList() {
                     <div class="d-flex align-items-center gap-3 my-1">
                         <img class="avatar rounded flex-none" src="${plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${plant.identification?.common_names?.[0] || 'Plant'}">
                         <div>
-                            <span class="d-block text-heading text-sm fw-semibold">${plant.identification?.common_names?.[0] || 'Unknown'}</span>
+                            <span class="d-block text-heading text-sm fw-semibold">${plant.identification?.names?.[0] || 'Unknown'}</span>
                             <span class="d-sm-block text-muted text-xs">${plant.identification?.family || 'Unknown'}</span>
                         </div>
                     </div>
@@ -71,12 +71,12 @@ function updateInspectTab(plant) {
         return;
     }
     inspectBody.innerHTML = plant ? `
-        <p>Name: <span>${plant.identification?.common_names?.[0] || 'Unknown'}</span></p>
+        <p>Name: <span>${plant.identification?.names?.[0] || 'Unknown'}</span></p>
         <p>Family: <span>${plant.identification?.family || 'Unknown'}</span></p>
         <p>Ideal Temp Max: <span>${plant.care?.temperature?.max_f || 'N/A'}°F</span></p>
         <p>Ideal Temp Min: <span>${plant.care?.temperature?.min_f || 'N/A'}°F</span></p>
-        <img class="avatar rounded flex-none" src="${plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${plant.identification?.common_names?.[0] || 'Plant'}">
-        ${plant.media?.full_images?.map(img => `<img class="avatar rounded flex-none" src="${img}" alt="Plant image">`).join('') || ''}
+        <img class="avatar rounded flex-none" src="${plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${plant.identification?.names?.[0] || 'Plant'}">
+        ${plant.media?.images?.map(img => `<img class="avatar rounded flex-none" src="${img}" alt="Plant image">`).join('') || ''}
     ` : `
         <p>No plant selected. Please select a plant from the Database tab.</p>
         <button class="btn btn-primary" id="go-to-database">Go to Database</button>
