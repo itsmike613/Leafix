@@ -1,0 +1,211 @@
+{
+    "plant": {
+        "id": "00001",
+        "identification": {
+            "common_names": [
+                "Snake Plant",
+                "Mother-in-Law's Tongue"
+            ],
+            "scientific_name": "Sansevieria trifasciata",
+            "family": "Asparagaceae",
+            "cultivar": "Laurentii",
+            "synonyms": [
+                "Dracaena trifasciata"
+            ]
+        },
+        "media": {
+            "thumbnail": "images/plant001_thumb.webp",
+            "full_images": [
+                "images/plant001_full.jpg"
+            ]
+        },
+        "classification": {
+            "category": "Succulent",
+            "growth_habit": "Upright",
+            "evergreen": true,
+            "lifecycle_type": "Perennial",
+            "indoor_vs_outdoor": "Both"
+        },
+        "care": {
+            "light": {
+                "level": "Low to Bright Indirect",
+                "lux_range": [
+                    500,
+                    2000
+                ],
+                "sun_tolerance": "Moderate"
+            },
+            "temperature": {
+                "min_f": 50,
+                "max_f": 85,
+                "optimal_f": [
+                    65,
+                    75
+                ]
+            },
+            "humidity": {
+                "min_percent": 30,
+                "max_percent": 60,
+                "optimal_percent": [
+                    40,
+                    50
+                ],
+                "misting": "Not required"
+            },
+            "watering": {
+                "frequency": "Every 14–28 days",
+                "amount_ml": 100,
+                "moisture_preference": "Dry between",
+                "method": "Bottom watering"
+            },
+            "soil": {
+                "type": "Well-draining",
+                "pH_min": 5.8,
+                "pH_max": 7.2,
+                "pH_optimal": [
+                    6.0,
+                    7.0
+                ],
+                "components": [
+                    "Sand",
+                    "Perlite"
+                ]
+            },
+            "fertilizer": {
+                "type": "10-10-10",
+                "frequency": "Monthly spring/summer",
+                "method": "Dilute in water"
+            },
+            "pruning": {
+                "frequency": "As needed",
+                "method": "Cut damaged leaves at base",
+                "season": "Any"
+            },
+            "dormancy_period": "None",
+            "soil_drainage_rate": "Fast"
+        },
+        "growth": {
+            "height_in": [
+                24,
+                36
+            ],
+            "width_in": [
+                10,
+                24
+            ],
+            "growth_rate": "Slow",
+            "lifespan_yrs": [
+                5,
+                10
+            ],
+            "root_depth_cm": 15
+        },
+        "science": {
+            "photosynthetic_rate": 2.5,
+            "wue_g_l": 5.0,
+            "nutrient_uptake": [
+                "N: 10 mg/kg",
+                "P: 5 mg/kg"
+            ],
+            "leaf_surface_cm2": 200,
+            "co2_reduction_ppm": 0.7,
+            "carbon_seq_g_yr": 100,
+            "soil_biome_impact": "Promotes fungi",
+            "soil_remediation": "None",
+            "spectral_absorption": "Green wavelengths",
+            "uv_protection": "High anthocyanin",
+            "genetic_diversity": 10,
+            "oxygen_production_mg_hr": 20,
+            "leaf_thickness_mm": 3.2
+        },
+        "ecology": {
+            "native_region": "West Africa",
+            "invasive_status": "Non-invasive",
+            "pollinators": [
+                "Bees"
+            ],
+            "biodiversity_index": 2,
+            "shade_m2": 0,
+            "soil_stabilization": "Moderate",
+            "light_pollution_impact": "Low",
+            "urban_tolerance": "High"
+        },
+        "benefits": {
+            "air_quality": [
+                "Removes benzene",
+                "Removes formaldehyde"
+            ],
+            "ecological": [
+                "Drought-tolerant"
+            ],
+            "mental_health": [
+                "Low stress care"
+            ],
+            "cultural": [
+                "African resilience symbol"
+            ],
+            "medicinal": "None",
+            "insect_repellent": "None",
+            "economic_value": "Ornamental, $15/plant",
+            "feng_shui": "Wealth & Protection",
+            "pet_safe_certified": false
+        },
+        "health": {
+            "toxicity": "Mild to pets",
+            "pests": [
+                "Spider mites"
+            ],
+            "diseases": [
+                "Root rot"
+            ],
+            "allergen_potential": "Low",
+            "climate_resilience": "High (drought-tolerant)",
+            "disease_resistance_level": "Moderate"
+        },
+        "practical": {
+            "hardiness_zones": [
+                9,
+                11
+            ],
+            "cost_usd": 15,
+            "pot_size_in": [
+                6,
+                8
+            ],
+            "repot_yrs": 2,
+            "availability": "Common"
+        },
+        "propagation": {
+            "methods": [
+                "Cuttings",
+                "Division"
+            ],
+            "success_rate": "High",
+            "season": "Spring",
+            "germination_days": 14
+        },
+        "seasonal": {
+            "phenology": "Growth year-round",
+            "bloom_time": "Rare, summer",
+            "fruit_yield": "None",
+            "leaf_color_changes": "No"
+        },
+        "user_interaction": {
+            "maintenance_level": "Low",
+            "care_tips": [
+                "Avoid overwatering",
+                "Clean leaves monthly"
+            ],
+            "child_friendly": true,
+            "smell_profile": "Neutral"
+        },
+        "historical": {
+            "cultivation_origin": "Unknown",
+            "ethnobotanical": "Symbol of resilience in African folklore",
+            "first_documented": "1794",
+            "traditional_medicine": [
+                "Used for skin infections in Nigeria"
+            ]
+        }
+    }
+}

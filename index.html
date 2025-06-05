@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Leafix" property="og:title">
+    <meta content="The worlds most detailed plant database" property="og:description">
+    <meta content="https://itsmike613.github.io/Leafix/" property="og:url">
+    <meta content="https://github.com/itsmike613/Leafix/blob/main/Source/Images/logo.png?raw=true" property="og:image">
+    <meta content="#1E90FF" data-react-helmet="true" name="theme-color">
+
+    <!-- Tab -->
+    <link rel="icon" type="image/x-icon" href="Source/Images/logo.png">
+    <title>Leafix</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/@webpixels/css/dist/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Source/Styles/index.css">
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://feedback.fish/ff.js?pid=1d1a485ffd7fed"></script>
+</head>
+
+<body>
+    <div class="d-flex flex-column flex-lg-row h-lg-100 bg-body-tertiary" data-x-type="layout">
+        <div class="offcanvas-lg offcanvas-start w-rem-80 w-lg-auto vh-100" data-bs-scroll="true" tabindex="-1" id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
+            <nav class="sidebar w-100 w-rem-lg-64 d-flex flex-column flex-shrink-0 position-relative z-2 h-100">
+
+                <div class="dropdown-center px-4 py-2 mx-n2 position-relative">
+                    <button type="button" class="w-100 px-2 py-2 text-start border-0 bg-transparent shadow-none bg-accent-hover rounded d-flex gap-3 align-items-center">
+                        <img src="Source/Images/thumbnail.png" class="avatar avatar-sm" alt="..." />
+                        <div class="d-grid flex-grow-1 ls-tight text-sm">
+                            <span class="text-truncate text-heading fw-semibold">Leafix</span>
+                            <span class="text-truncate text-xs text-body-secondary mt-n1">Plant database</span>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="px-4 py-4 flex-fill overflow-y-auto scrollbar">
+                    <div class="vstack gap-5">
+                        <div>
+                            <div class="d-flex align-items-center px-3 px-lg-0 mb-1">
+                                <span class="d-block text-xs text-body-secondary fw-semibold me-auto">Main Menu</span>
+                            </div>
+
+                            <ul class="navbar-nav navbar-vertical-nav gap-0.5 mx-lg-n2">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <i class="ph ph-house-simple"></i>
+                                        <span>Browse</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <i class="ph ph-globe-hemisphere-west"></i>
+                                        <span>Mission</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <i class="ph ph-gear"></i>
+                                        <span>Settings</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <div class="d-flex align-items-center px-3 px-lg-0 mb-1">
+                                <span class="d-block text-xs text-body-secondary fw-semibold me-auto">Resources</span>
+                            </div>
+
+                            <ul class="navbar-nav navbar-vertical-nav gap-0.5 mx-lg-n2">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <i class="ph ph-book-bookmark"></i>
+                                        <span>Dictionary</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        <i class="ph ph-jar"></i>
+                                        <span>Guide</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="flex-lg-fill overflow-x-auto vstack vh-100">
+            <div class="flex-fill overflow-y-lg-auto mt-lg-2 scrollbar bg-body rounded-top-start-lg-3 rounded-top-end-lg-0 border-top-lg border-start-lg shadow-lg-2">
+                <header class="container-fluid border-bottom">
+                    <div>
+                        <ul class="nav nav-tabs nav-tabs-flush gap-6 mt-2 overflow-x border-0" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active" id="database-tab" data-bs-toggle="tab" data-bs-target="#database" type="button" role="tab" aria-controls="database" aria-selected="true">Database</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="filters-tab" data-bs-toggle="tab" data-bs-target="#filters" type="button" role="tab" aria-controls="filters" aria-selected="false">Filters</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="inspect-tab" data-bs-toggle="tab" data-bs-target="#inspect" type="button" role="tab" aria-controls="inspect" aria-selected="false">Inspect</button>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                <main class="container-fluid">
+                    <div class="tab-content mt-5">
+                        <div class="tab-pane fade show active" id="database" role="tabpanel" aria-labelledby="database-tab">
+                            <div class="input-group input-group-sm input-group-inline shadow-none bg-accent border border-solid mb-5">
+                                <span class="input-group-text bg-transparent rounded-start border-0">
+                                    <i class="bi bi-search me-2"></i>
+                                </span>
+                                <input type="text" class="form-control text-base bg-transparent ps-0 rounded-end border-0" placeholder="Search plants ..." value="">
+                            </div>
+                            <div class="row g-3 g-xl-5" id="plant-list">
+                                <!-- -->
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="filters" role="tabpanel" aria-labelledby="filters-tab">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="indoor">
+                                <label class="form-check-label" for="indoor">Indoor</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="outdoor">
+                                <label class="form-check-label" for="outdoor">Outdoor</label>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="inspect" role="tabpanel" aria-labelledby="inspect-tab">
+                            <div class="card">
+                                <div class="card-body" id="inspect-body">
+                                    <!-- -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Body Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+    <script src="Source/Scripts/index.js"></script>
+</body>
+
+</html>
