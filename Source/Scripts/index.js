@@ -8,7 +8,16 @@ fetch('Source/Data/index.json')
         return response.json();
     })
     .then(data => {
-        plants = Array.isArray(data) ? data : data.plants || [];
+        if (data.plant) {
+            plants = [data.plant];
+        } else if (Array.isArray(data)) {
+            plants = data;
+        } else if (data.plants) {
+            plants = data.plants;
+        } else {
+            plants = [];
+        }
+        console.log('Loaded plants:', plants);
         if (!Array.isArray(plants)) plants = [];
         fuse = new Fuse(plants, {
             keys: ['identification.common_names', 'identification.scientific_name', 'identification.family'],
@@ -39,19 +48,19 @@ function renderPlantList() {
 
     plantList.innerHTML = displayedPlants.length ? displayedPlants.map(plant => `
         <div class="col-lg-4 col-sm-6">
-        <div class="card">
-            <div class="p-3 d-flex align-items-center justify-content-between gap-6 border-0 py-2">
-                <div class="d-flex align-items-center gap-3 my-1">
-                    <img class="avatar rounded flex-none" src="${plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${plant.identification?.common_names?.[0] || 'Plant'}">
-                    <img src="${plant.media?.thumbnail || 'https://placehold.co/50'}">
-                    <div>
-                        <span class="d-block text-heading text-sm fw-semibold">${plant.identification?.common_names?.[0] || 'Unknown'}</span>
-                        <span class="d-sm-block text-muted text-xs">${plant.identification?.family || 'Unknown'}</span>
+            <div class="card">
+                <div class="p-3 d-flex align-items-center justify-content-between gap-6 border-0 py-2">
+                    <div class="d-flex align-items-center gap-3 my-1">
+                        <img class="avatar rounded flex-none" src="${plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${plant.identification?.common_names?.[0] || 'Plant'}">
+                        <img src="${plant.media?.thumbnail || 'https://placehold.co/50'}">
+                        <div>
+                            <span class="d-block text-heading text-sm fw-semibold">${plant.identification?.common_names?.[0] || 'Unknown'}</span>
+                            <span class="d-sm-block text-muted text-xs">${plant.identification?.family || 'Unknown'}</span>
+                        </div>
                     </div>
+                    <button class="btn btn-sm btn-dark" data-plant-id="${plant.id}">View</button>
                 </div>
-                <button class="btn btn-sm btn-dark" data-plant-id="${plant.id}">View</button>
             </div>
-        </div>
         </div>
     `).join('') : '<p>No plants found.</p>';
 }
