@@ -52,7 +52,6 @@ function renderPlantList() {
                 <div class="p-3 d-flex align-items-center justify-content-between gap-6 border-0 py-2">
                     <div class="d-flex align-items-center gap-3 my-1">
                         <img class="avatar rounded flex-none" src="${plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${plant.identification?.common_names?.[0] || 'Plant'}">
-                        <img src="${plant.media?.thumbnail || 'https://placehold.co/50'}">
                         <div>
                             <span class="d-block text-heading text-sm fw-semibold">${plant.identification?.common_names?.[0] || 'Unknown'}</span>
                             <span class="d-sm-block text-muted text-xs">${plant.identification?.family || 'Unknown'}</span>

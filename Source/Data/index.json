@@ -14,9 +14,9 @@
             ]
         },
         "media": {
-            "thumbnail": "images/plant001_thumb.webp",
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC1pIa2-QI_FUzIWc7FYOn2lbY8U3g0v9_30IBSms5e_tPl9xNDRPhgoaw_aXBdirm3Ug&usqp=CAU",
             "full_images": [
-                "images/plant001_full.jpg"
+                "https://d2fxn1d7fsdeeo.cloudfront.net/kentuckyliving.com/wp-content/uploads/2019/01/18153804/Unknown-1.jpeg", "https://cdn.shopify.com/s/files/1/0619/1218/7051/files/1661954674-dsc-7058-1.jpg"
             ]
         },
         "classification": {
