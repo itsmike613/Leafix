@@ -158,9 +158,9 @@ const updateInspectTab = plant => {
 
             <p>Ideal Temp Range: ${plant.care?.temperature?.optimal_f.join(' - ') || 'N/A'}%
             <div class="d-flex align-items-center gap-2">
-                <img src="${thumb = plant.media?.thumbnail || 'https://placehold.co/50'}" class="avatar rounded-1 object-cover" style="height: 25px; width: 15px;">
+                <img src="${plant.media?.thumbnail}" class="avatar object-cover" style="height: 100px; width: 70px;">
                 ${plant.media?.images?.map(img => `
-                    <img src="${img}" class="avatar rounded-1 object-cover" style="height: 25px; width: 15px;">
+                    <img src="${img}" class="avatar object-cover" style="height: 100px; width: 70px;">
                 `).join('')}
             </div>
         `;
