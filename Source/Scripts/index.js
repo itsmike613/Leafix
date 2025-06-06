@@ -12,7 +12,7 @@ fetch('Source/Data/index.json')
         plants = data.plant ? [data.plant] : Array.isArray(data) ? data : data.plants || [];
         if (!Array.isArray(plants)) plants = [];
         fuse = new Fuse(plants, {
-            keys: ['identification.common_names', 'identification.scientific_name', 'identification.family'],
+            keys: ['identification.names', 'identification.scientific_name', 'identification.family'],
             threshold: 0.3,
             includeScore: true
         });
@@ -34,7 +34,7 @@ function renderPlantList() {
     let displayedPlants = searchTerm ? fuse.search(searchTerm).map(({ item }) => item) : plants;
     if (selectedFilters.length) {
         displayedPlants = displayedPlants.filter(plant => 
-            plant.classification?.indoor_vs_outdoor === 'Both' || selectedFilters.includes(plant.classification?.indoor_vs_outdoor)
+            plant.classification?.placement === 'Both' || selectedFilters.includes(plant.classification?.placement)
         );
     }
     plantList.innerHTML = displayedPlants.length ? displayedPlants.map(plant => `
@@ -42,9 +42,9 @@ function renderPlantList() {
             <div class="card">
                 <div class="p-3 d-flex align-items-center justify-content-between gap-6 border-0 py-2">
                     <div class="d-flex align-items-center gap-3 my-1">
-                        <img class="avatar rounded flex-none" src="${plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${plant.identification?.common_names?.[0] || 'Plant'}">
+                        <img class="avatar rounded flex-none" src="${plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${plant.identification?.names?.[0] || 'Plant'}">
                         <div>
-                            <span class="d-block text-heading text-sm fw-semibold">${plant.identification?.common_names?.[0] || 'Unknown'}</span>
+                            <span class="d-block text-heading text-sm fw-semibold">${plant.identification?.names?.[0] || 'Unknown'}</span>
                             <span class="d-sm-block text-muted text-xs">${plant.identification?.family || 'Unknown'}</span>
                         </div>
                     </div>
@@ -60,11 +60,11 @@ function updateInspectTab(plant) {
     const inspectBody = document.getElementById('inspect-body');
     if (!inspectBody) return;
     inspectBody.innerHTML = plant ? `
-        <p>Name: <span>${plant.identification?.common_names?.[0] || 'Unknown'}</span></p>
+        <p>Name: <span>${plant.identification?.names?.[0] || 'Unknown'}</span></p>
         <p>Family: <span>${plant.identification?.family || 'Unknown'}</span></p>
         <p>Ideal Temp Max: <span>${plant.care?.temperature?.max_f || 'N/A'}°F</span></p>
         <p>Ideal Temp Min: <span>${plant.care?.temperature?.min_f || 'N/A'}°F</span></p>
-        <img class="avatar rounded flex-none" src="${plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${plant.identification?.common_names?.[0] || 'Plant'}">
+        <img class="avatar rounded flex-none" src="${plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${plant.identification?.names?.[0] || 'Plant'}">
         ${plant.media?.full_images?.map(img => `<img class="avatar rounded flex-none" src="${img}" alt="Plant image">`).join('') || ''}
     ` : `
         <p>No plant selected. Please select a plant from the Database tab.</p>
