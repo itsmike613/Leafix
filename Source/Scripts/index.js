@@ -83,27 +83,72 @@ const updateInspectTab = plant => {
                     </div>
                     <hr class="my-4">
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-6 mb-4">
+                        <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">
-                                Names <i class="ph ph-info ms-1" data-bs-toggle="tooltip" title="Common names used for the plant"></i>
+                                Names <i class="ph ph-info ms-1" title="Common names used for the plant"></i>
                             </span>
                             <span class="d-block text-sm text-muted">${plant.identification?.names.join(', ')}</span>
                         </div>
-                        <div class="col-6 mb-4">
+                        <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">
-                                Scientific name <i class="ph ph-info ms-1" data-bs-toggle="tooltip" title="The official Latin name of the plant"></i>
+                                Scientific name <i class="ph ph-info ms-1" title="The official Latin name of the plant"></i>
                             </span>
                             <span class="d-block text-sm text-muted">${plant.identification?.sci_name}</span>
                         </div>
-                        <div class="col-6 mb-4">
+                        <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Family</span>
                             <span class="d-block text-sm text-muted">${plant.identification?.family}</span>
                         </div>
-                        <div class="col-6 mb-4">
+                        <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Cultivar</span>
                             <span class="d-block text-sm text-muted">${plant.identification?.cultivar}</span>
                         </div>
-                        <div class="col-6 mb-4">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Genus</span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.genus}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Synonyms</span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.synonyms.join(', ')}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-magnifying-glass"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Identification</span>
+                                <span class="text-muted text-xs">The plant’s naming and classification details</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">
+                                Names <i class="ph ph-info ms-1" title="Common names used for the plant"></i>
+                            </span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.names.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">
+                                Scientific name <i class="ph ph-info ms-1" title="The official Latin name of the plant"></i>
+                            </span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.sci_name}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Family</span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.family}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Cultivar</span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.cultivar}</span>
+                        </div>
+                        <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Synonyms</span>
                             <span class="d-block text-sm text-muted">${plant.identification?.synonyms.join(', ')}</span>
                         </div>
