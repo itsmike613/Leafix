@@ -164,7 +164,7 @@ const updateInspectTab = plant => {
                 `).join('')}
             </div>
         `;
-    })() : '<p>No plant selected. Please select a plant from the Database tab.</p><button class="btn btn-primary" id="go-to-database">Go to Database</button>';
+    })() : '<p>No plant selected. Please select a plant from the Database tab.</p><button class="btn btn-sm btn-primary" id="go-to-database">Go to Database</button>';
 };
 
 const setupEventListeners = () => {
