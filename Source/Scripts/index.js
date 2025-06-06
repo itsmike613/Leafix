@@ -1,5 +1,26 @@
 let plants = [], selectedPlant = null, fuse, searchInput, plantList, resultsCount;
 
+const filterConfig = [
+    {
+        group: 'Placement',
+        attribute: 'classification.placement',
+        includeBoth: true,
+        filters: [
+            { id: 'indoor', label: 'Indoor', value: 'Indoor' },
+            { id: 'outdoor', label: 'Outdoor', value: 'Outdoor' }
+        ]
+    },
+    {
+        group: 'Category',
+        attribute: 'classification.category',
+        includeBoth: false,
+        filters: [
+            { id: 'succulent', label: 'Succulent', value: 'Succulent' },
+            { id: 'tree', label: 'Tree', value: 'Tree' }
+        ]
+    }
+];
+
 fetch('Source/Data/index.json')
     .then(response => response.ok ? response.json() : Promise.reject('Failed to fetch index.json'))
     .then(data => {
@@ -8,14 +29,50 @@ fetch('Source/Data/index.json')
         fuse = new Fuse(plants, { keys: ['identification.names', 'identification.scientific_name', 'identification.family'], threshold: 0.3 });
         [searchInput, plantList, resultsCount] = ['.form-control', '#plant-list', '#results-count'].map(q => document.querySelector(q));
         if (!searchInput || !plantList || !resultsCount) return console.error('Required DOM elements not found');
+        generateFilterHTML();
         renderPlantList();
         setupEventListeners();
     })
     .catch(error => console.error('Error loading index.json:', error));
 
+const generateFilterHTML = () => {
+    document.getElementById('filters').innerHTML = filterConfig.map(group => `
+        <div class="filter-group mb-3">
+            <h4>${group.group}</h4>
+            ${group.filters.map(filter => `
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="${filter.id}">
+                    <label class="form-check-label" for="${filter.id}">${filter.label}</label>
+                </div>
+            `).join('')}
+        </div>
+    `).join('');
+};
+
 const renderPlantList = () => {
-    const term = searchInput.value.trim(), filters = [...document.querySelectorAll('#filters input:checked')].map(i => i.id === 'indoor' ? 'Indoor' : 'Outdoor'), results = term ? fuse.search(term).map(r => r.item) : plants, displayed = filters.length ? results.filter(p => p.classification?.placement === 'Both' || filters.includes(p.classification?.placement)) : results;
-    plantList.innerHTML = displayed.length ? displayed.map(p => `
+    const term = searchInput.value.trim();
+    const results = term ? fuse.search(term).map(r => r.item) : plants;
+
+    let filteredPlants = results;
+
+    filterConfig.forEach(group => {
+        const selectedValues = group.filters
+            .filter(f => document.getElementById(f.id).checked)
+            .map(f => f.value);
+        if (selectedValues.length > 0) {
+            if (group.includeBoth) {
+                filteredPlants = filteredPlants.filter(plant =>
+                    selectedValues.includes(plant[group.attribute]) || plant[group.attribute] === 'Both'
+                );
+            } else {
+                filteredPlants = filteredPlants.filter(plant =>
+                    selectedValues.includes(plant[group.attribute])
+                );
+            }
+        }
+    });
+
+    plantList.innerHTML = filteredPlants.length ? filteredPlants.map(p => `
         <div class="col-lg-4 col-sm-6">
             <div class="card">
                 <div class="p-3 d-flex align-items-center justify-content-between gap-6 border-0 py-2">
@@ -31,7 +88,7 @@ const renderPlantList = () => {
             </div>
         </div>
     `).join('') : '<p>No plants found.</p>';
-    resultsCount.innerHTML = `Showing ${displayed.length} out of ${plants.length} plants`;
+    resultsCount.innerHTML = `Showing ${filteredPlants.length} out of ${plants.length} plants`;
 };
 
 const updateInspectTab = plant => {
@@ -59,7 +116,7 @@ const setupEventListeners = () => {
         }
     });
     searchInput.addEventListener('input', renderPlantList);
-    document.querySelector('#filters').addEventListener('change', renderPlantList);
+    document.getElementById('filters').addEventListener('change', renderPlantList);
     $('#filters-tab').on('shown.bs.tab', () => updateInspectTab(selectedPlant));
     $('#inspect-tab').on('shown.bs.tab', () => updateInspectTab(selectedPlant));
     document.addEventListener('click', e => e.target.id === 'go-to-database' && $('#database-tab').tab('show'));
