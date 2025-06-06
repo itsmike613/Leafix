@@ -17,8 +17,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://unpkg.com/@webpixels/css/dist/index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
-        type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="Source/Styles/index.css">
 
@@ -33,8 +32,7 @@
             id="sidebarOffcanvas" aria-labelledby="sidebarOffcanvasLabel">
             <nav class="sidebar w-100 w-rem-lg-64 d-flex flex-column flex-shrink-0 position-relative z-2 h-100">
                 <div class="dropdown-center px-4 py-2 mx-n2 position-relative">
-                    <button type="button"
-                        class="w-100 px-2 py-2 text-start border-0 bg-transparent shadow-none bg-accent-hover rounded d-flex gap-3 align-items-center">
+                    <button type="button" class="w-100 px-2 py-2 text-start border-0 bg-transparent shadow-none bg-accent-hover rounded d-flex gap-3 align-items-center">
                         <img src="Source/Images/thumbnail.png" class="avatar avatar-sm" alt="..." />
                         <div class="d-grid flex-grow-1 ls-tight text-sm">
                             <span class="text-truncate text-heading fw-semibold">Leafix</span>
@@ -100,25 +98,18 @@
             </nav>
         </div>
         <div class="flex-lg-fill overflow-x-auto vstack vh-100">
-            <div
-                class="flex-fill overflow-y-lg-auto mt-lg-2 scrollbar bg-body rounded-top-start-lg-3 rounded-top-end-lg-0 border-top-lg border-start-lg shadow-lg-2">
+            <div class="flex-fill overflow-y-lg-auto mt-lg-2 scrollbar bg-body rounded-top-start-lg-3 rounded-top-end-lg-0 border-top-lg border-start-lg shadow-lg-2">
                 <header class="container-fluid border-bottom">
                     <div>
                         <ul class="nav nav-tabs nav-tabs-flush gap-6 mt-2 overflow-x border-0" role="tablist">
                             <li class="nav-item">
-                                <button class="nav-link active" id="database-tab" data-bs-toggle="tab"
-                                    data-bs-target="#database" type="button" role="tab" aria-controls="database"
-                                    aria-selected="true">Database</button>
+                                <button class="nav-link active" id="database-tab" data-bs-toggle="tab" data-bs-target="#database" type="button" role="tab" aria-controls="database" aria-selected="true">Database</button>
                             </li>
                             <li class="nav-item">
-                                <button class="nav-link" id="filters-tab" data-bs-toggle="tab" data-bs-target="#filters"
-                                    type="button" role="tab" aria-controls="filters"
-                                    aria-selected="false">Filters</button>
+                                <button class="nav-link" id="filters-tab" data-bs-toggle="tab" data-bs-target="#filters" type="button" role="tab" aria-controls="filters" aria-selected="false">Filters</button>
                             </li>
                             <li class="nav-item">
-                                <button class="nav-link" id="inspect-tab" data-bs-toggle="tab" data-bs-target="#inspect"
-                                    type="button" role="tab" aria-controls="inspect"
-                                    aria-selected="false">Inspect</button>
+                                <button class="nav-link" id="inspect-tab" data-bs-toggle="tab" data-bs-target="#inspect" type="button" role="tab" aria-controls="inspect" aria-selected="false">Inspect</button>
                             </li>
                         </ul>
                     </div>
@@ -129,11 +120,8 @@
                             aria-labelledby="database-tab">
                             <div
                                 class="input-group input-group-sm input-group-inline shadow-none bg-accent border border-solid mb-2">
-                                <span class="input-group-text bg-transparent rounded-start border-0"><i
-                                        class="bi bi-search me-2"></i></span>
-                                <input type="text"
-                                    class="form-control text-base bg-transparent ps-0 rounded-end border-0"
-                                    placeholder="Search plants ...">
+                                <span class="input-group-text bg-transparent rounded-start border-0"><i class="bi bi-search me-2"></i></span>
+                                <input type="text" class="form-control text-base bg-transparent ps-0 rounded-end border-0" placeholder="Search plants ...">
                             </div>
                             <div id="results-count" class="text-muted text-sm mb-5"></div>
                             <div class="row g-3 g-xl-5" id="plant-list">
