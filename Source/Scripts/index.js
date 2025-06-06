@@ -107,12 +107,13 @@ const updateInspectTab = plant => {
                 </div>
             </div>
 
-            <p>Name: ${plant.identification?.names?.[0]}</p>
-            <p>Family: ${plant.identification?.family || 'Unknown'}</p>
-            <p>Ideal Temp Max: ${plant.care?.temperature?.max_f || 'N/A'}°F</p>
-            <p>Ideal Temp Min: ${plant.care?.temperature?.min_f || 'N/A'}°F</p>
-            <p>Ideal Temp Range: ${plant.care?.tempature?.optimal_f.join(' - ') || 'N/A'}%
-            <img class="avatar rounded flex-none" src="${thumb = plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${name}">${plant.media?.images?.map(img => `<img class="avatar rounded flex-none" src="${img}" alt="Plant image">`).join('') || ''}
+            <p>Ideal Temp Range: ${plant.care?.temperature?.optimal_f.join(' - ') || 'N/A'}%
+            <div class="d-flex align-items-center gap-2">
+                <img src="${thumb = plant.media?.thumbnail || 'https://placehold.co/50'}" class="avatar rounded-1 object-cover" style="height: 25px; width: 15px;">
+                ${plant.media?.images?.map(img => `
+                    <img src="${img}" class="avatar rounded-1 object-cover" style="height: 25px; width: 15px;">
+                `).join('')}
+            </div>
         `;
     })() : '<p>No plant selected. Please select a plant from the Database tab.</p><button class="btn btn-primary" id="go-to-database">Go to Database</button>';
 };
