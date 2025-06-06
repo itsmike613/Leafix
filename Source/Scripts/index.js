@@ -53,8 +53,14 @@ const updateInspectTab = plant => {
     const body = document.getElementById('inspect-body');
     if (!body) return;
     body.innerHTML = plant ? (() => {
-        const name = plant.identification?.names?.[0] || 'Unknown', thumb = plant.media?.thumbnail || 'https://placehold.co/50';
-        return `<p>Name: <span>${name}</span></p><p>Family: <span>${plant.identification?.family || 'Unknown'}</span></p><p>Ideal Temp Max: <span>${plant.care?.temperature?.max_f || 'N/A'}°F</span></p><p>Ideal Temp Min: <span>${plant.care?.temperature?.min_f || 'N/A'}°F</span></p><img class="avatar rounded flex-none" src="${thumb}" alt="${name}">${plant.media?.images?.map(img => `<img class="avatar rounded flex-none" src="${img}" alt="Plant image">`).join('') || ''}`;
+        return `
+            <p>Name: ${plant.identification?.names?.[0]}</p>
+            <p>Family: ${plant.identification?.family || 'Unknown'}</p>
+            <p>Ideal Temp Max: ${plant.care?.temperature?.max_f || 'N/A'}°F</p>
+            <p>Ideal Temp Min: ${plant.care?.temperature?.min_f || 'N/A'}°F</p>
+            <p>Ideal Temp Range: ${plant.care?.tempature?.optimal_f.join(' - ') || 'N/A'}%
+            <img class="avatar rounded flex-none" src="${thumb = plant.media?.thumbnail || 'https://placehold.co/50'}" alt="${name}">${plant.media?.images?.map(img => `<img class="avatar rounded flex-none" src="${img}" alt="Plant image">`).join('') || ''}
+        `;
     })() : '<p>No plant selected. Please select a plant from the Database tab.</p><button class="btn btn-primary" id="go-to-database">Go to Database</button>';
 };
 
