@@ -85,7 +85,7 @@ const updateInspectTab = plant => {
                     <div class="row justify-content-between align-items-center">
                         <div class="col-6 mb-4">
                             <span class="d-block h6 text-heading mb-0">
-                                Names <i class="ph ph-info ms-1" title="Common names used for the plant"></i>
+                                Names <i class="ph ph-info ms-1" data-bs-toggle="tooltip" title="Common names used for the plant"></i>
                             </span>
                             <span class="d-block text-sm text-muted">${plant.identification?.names.join(', ')}</span>
                         </div>
