@@ -50,7 +50,7 @@ const renderPlantList = () => {
 };
 
 const updateInspectTab = plant => {
-    const body = document.getElementById('inspect-body');
+    const body = document.getElementById('inspect');
     if (!body) return;
     body.innerHTML = plant ? (() => {
         return `
