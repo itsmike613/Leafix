@@ -97,7 +97,11 @@ const updateInspectTab = plant => {
                         </div>
                         <div class="col-6 mb-4">
                             <span class="d-block h6 text-heading mb-0">Cultivar</span>
-                            <span class="d-block text-sm text-muted">Laurentii</span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.cultivar}</span>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <span class="d-block h6 text-heading mb-0">Synonyms</span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.synonyms.join(', ')}</span>
                         </div>
                     </div>
                 </div>
