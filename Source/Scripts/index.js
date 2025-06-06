@@ -54,6 +54,51 @@ const updateInspectTab = plant => {
     if (!body) return;
     body.innerHTML = plant ? (() => {
         return `
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="row g-0">
+                        <div class="col">
+                            <div class="d-flex align-items-center gap-3">
+                                <img class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC1pIa2-QI_FUzIWc7FYOn2lbY8U3g0v9_30IBSms5e_tPl9xNDRPhgoaw_aXBdirm3Ug&usqp=CAU">
+                                <div>
+                                    <span class="d-block text-heading text-sm fw-semibold">${plant.identification.names.[0]}</span>
+                                    <span class="d-sm-block text-muted text-xs">PID${plant.id}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-magnifying-glass"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Identification</span>
+                                <span class="text-muted text-xs">The plant’s naming and classification details</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-4">
+                            <span class="d-block h6 text-heading mb-0">Scientific name</span>
+                            <span class="d-block text-sm text-muted">Sansevieria trifasciata</span>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <span class="d-block h6 text-heading mb-0">Family</span>
+                            <span class="d-block text-sm text-muted">Asparagaceae</span>
+                        </div>
+                        <div class="col-6 mb-4">
+                            <span class="d-block h6 text-heading mb-0">Cultivar</span>
+                            <span class="d-block text-sm text-muted">Laurentii</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <p>Name: ${plant.identification?.names?.[0]}</p>
             <p>Family: ${plant.identification?.family || 'Unknown'}</p>
             <p>Ideal Temp Max: ${plant.care?.temperature?.max_f || 'N/A'}°F</p>
