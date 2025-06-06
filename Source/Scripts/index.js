@@ -16,7 +16,7 @@ fetch('Source/Data/index.json')
     .then(data => {
         plants = Array.isArray(data) ? data : data.plant ? [data.plant] : data.plants || [];
         plants.forEach(p => plantsMap[p.id] = p);
-        fuse = new Fuse(plants, { keys: ['identification.names', 'identification.scientific_name', 'identification.family'], threshold: 0.3 });
+        fuse = new Fuse(plants, { keys: ['identification.names', 'identification.sci_name', 'identification.family'], threshold: 0.3 });
         [searchInput, plantList, resultsCount] = ['.form-control', '#plant-list', '#results-count'].map(q => document.querySelector(q));
         if (!searchInput || !plantList || !resultsCount) throw new Error('Required DOM elements not found');
         document.getElementById('filters').innerHTML = filterConfig.map(g => `
@@ -84,12 +84,16 @@ const updateInspectTab = plant => {
                     <hr class="my-4">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-6 mb-4">
+                            <span class="d-block h6 text-heading mb-0">Names</span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.names.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-4">
                             <span class="d-block h6 text-heading mb-0">Scientific name</span>
-                            <span class="d-block text-sm text-muted">Sansevieria trifasciata</span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.sci_name}</span>
                         </div>
                         <div class="col-6 mb-4">
                             <span class="d-block h6 text-heading mb-0">Family</span>
-                            <span class="d-block text-sm text-muted">Asparagaceae</span>
+                            <span class="d-block text-sm text-muted">${plant.identification?.family}</span>
                         </div>
                         <div class="col-6 mb-4">
                             <span class="d-block h6 text-heading mb-0">Cultivar</span>

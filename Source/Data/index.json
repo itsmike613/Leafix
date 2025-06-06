@@ -3,7 +3,7 @@
         "id": "00001",
         "identification": {
             "names": ["Snake Plant", "Mother-in-Law's Tongue", "Saint George's Sword", "Viper’s Bowstring Hemp", "Bowstring Hemp"],
-            "scientific_name": "Dracaena trifasciata",
+            "sci_name": "Dracaena trifasciata",
             "family": "Asparagaceae",
             "cultivar": "Laurentii",
             "synonyms": ["Sansevieria trifasciata"]
