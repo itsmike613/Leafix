@@ -44,7 +44,7 @@ const renderPlantList = () => {
     if (selected.length) filteredPlants = filteredPlants.filter(p => selected.includes(p[g.attribute]) || (g.includeBoth && p[g.attribute] === 'Both'));});
     plantList.innerHTML = filteredPlants.length ? filteredPlants.map(p => {
         const name = p.identification?.names?.[0] || 'Unknown', thumb = p.media?.thumbnail || 'https://placehold.co/50';
-        return `<div class="col-lg-4 col-sm-6"><div class="card"><div class="p-3 d-flex align-items-center justify-content-between gap-6 border-0 py-2"><div class="d-flex align-items-center gap-3 my-1"><img class="avatar rounded flex-none" src="${thumb}" alt="${name}"><div><span class="d-block text-heading text-sm fw-semibold">${name}</span><span class="d-sm-block text-muted text-xs">${p.identification?.family || 'Unknown'}</span></div></div><button class="btn btn-sm btn-dark" data-action="view-plant" data-plant-id="${p.id}">View</button></div></div></div>`;
+        return `<div class="col-lg-4 col-sm-6"><div class="card"><div class="p-3 d-flex align-items-center justify-content-between gap-6 border-0 py-2"><div class="d-flex align-items-center gap-3 my-1"><img class="avatar" src="${thumb}" alt="${name}"><div><span class="d-block text-heading text-sm fw-semibold">${name}</span><span class="d-sm-block text-muted text-xs">${p.identification?.family || 'Unknown'}</span></div></div><button class="btn btn-sm btn-dark" data-action="view-plant" data-plant-id="${p.id}">View</button></div></div></div>`;
     }).join('') : '<p>No plants found.</p>';
     resultsCount.textContent = `Showing ${filteredPlants.length} of ${plants.length} plants`;
 };
