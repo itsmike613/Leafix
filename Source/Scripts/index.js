@@ -61,7 +61,7 @@ const updateInspectTab = plant => {
                             <div class="d-flex align-items-center gap-3">
                                 <img class="avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC1pIa2-QI_FUzIWc7FYOn2lbY8U3g0v9_30IBSms5e_tPl9xNDRPhgoaw_aXBdirm3Ug&usqp=CAU">
                                 <div>
-                                    <span class="d-block text-heading text-sm fw-semibold">${plant.identification.names.[0]}</span>
+                                    <span class="d-block text-heading text-sm fw-semibold">${plant.identification?.names?.[0]}</span>
                                     <span class="d-sm-block text-muted text-xs">PID${plant.id}</span>
                                 </div>
                             </div>
