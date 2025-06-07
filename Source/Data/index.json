@@ -5,8 +5,8 @@
             "names": ["Snake Plant", "Mother-in-Law's Tongue", "Saint George's Sword", "Viper’s Bowstring Hemp", "Bowstring Hemp"],
             "sci_name": "Dracaena trifasciata",
             "family": "Asparagaceae",
-            "cultivar": "Laurentii",
             "genus": "Dracaena",
+            "cultivar": "Laurentii",
             "synonyms": ["Sansevieria trifasciata"]
         },
         "media": {
@@ -17,8 +17,20 @@
             "category": "Succulent",
             "growth_habit": "Upright",
             "lifecycle_type": "Perennial",
-            "placement": "Both",
-            "evergreen": true
+            "placement": "Indoor & Outdoor",
+            "evergreen": true,
+            "hardiness_zones": [9, 11]
+        },
+        "growth": {
+            "height_in": [24, 36],
+            "width_in": [10, 24],
+            "growth_rate": "Slow",
+            "lifespan_yrs": [5, 10],
+            "root_depth_cm": 15,
+            "phenology": "Growth year-round",
+            "bloom_time": "Rare, summer",
+            "fruit_yield": "None",
+            "leaf_color_changes": "No"
         },
         "care": {
             "light": {
@@ -40,7 +52,7 @@
             "watering": {
                 "frequency": "Every 14–28 days",
                 "amount_ml": 100,
-                "moisture_preference": "Dry between",
+                "moisture_preference": "Dry between watering",
                 "method": "Bottom watering"
             },
             "soil": {
@@ -48,42 +60,26 @@
                 "pH_min": 5.8,
                 "pH_max": 7.2,
                 "pH_optimal": [6.0, 7.0],
-                "components": ["Sand", "Perlite"]
+                "components": ["Sand", "Perlite"],
+                "drainage_rate": "Fast"
             },
             "fertilizer": {
                 "type": "10-10-10",
-                "frequency": "Monthly spring/summer",
-                "method": "Dilute in water"
+                "frequency": "Monthly during spring and summer",
+                "method": "Diluted in water"
             },
             "pruning": {
                 "frequency": "As needed",
                 "method": "Cut damaged leaves at base",
                 "season": "Any"
             },
-            "dormancy_period": "None",
-            "soil_drainage_rate": "Fast"
+            "dormancy_period": "None"
         },
-        "growth": {
-            "height_in": [24, 36],
-            "width_in": [10, 24],
-            "growth_rate": "Slow",
-            "lifespan_yrs": [5, 10],
-            "root_depth_cm": 15
-        },
-        "science": {
-            "photosynthetic_rate": 2.5,
-            "wue_g_l": 5.0,
-            "nutrient_uptake": ["N: 10 mg/kg", "P: 5 mg/kg"],
-            "leaf_surface_cm2": 200,
-            "co2_reduction_ppm": 0.7,
-            "carbon_seq_g_yr": 100,
-            "soil_biome_impact": "Promotes fungi",
-            "soil_remediation": "None",
-            "spectral_absorption": "Green wavelengths",
-            "uv_protection": "High anthocyanin",
-            "genetic_diversity": 10,
-            "oxygen_production_mg_hr": 20,
-            "leaf_thickness_mm": 3.2
+        "propagation": {
+            "methods": ["Cuttings", "Division"],
+            "success_rate": "High",
+            "season": "Spring",
+            "germination_days": 14
         },
         "ecology": {
             "native_region": "West Africa",
@@ -94,6 +90,29 @@
             "soil_stabilization": "Moderate",
             "light_pollution_impact": "Low",
             "urban_tolerance": "High"
+        },
+        "science": {
+            "photosynthetic_rate": 2.5,
+            "water_use_efficiency_g_l": 5.0,
+            "nutrient_uptake": {
+                "nitrogen": {"amount_mg_per_kg": 10, "role": "Macronutrient, growth"},
+                "phosphorus": {"amount_mg_per_kg": 5, "role": "Macronutrient, root development"},
+                "potassium": {"amount_mg_per_kg": 15, "role": "Macronutrient, water regulation"},
+                "calcium": {"amount_mg_per_kg": 8, "role": "Cell wall strength"},
+                "magnesium": {"amount_mg_per_kg": 4, "role": "Chlorophyll component"},
+                "iron": {"amount_mg_per_kg": 0.3, "role": "Enzyme function"},
+                "zinc": {"amount_mg_per_kg": 0.05, "role": "Growth regulation"}
+            },
+            "leaf_surface_area_cm2": 200,
+            "co2_reduction_ppm": 0.7,
+            "carbon_sequestration_g_per_year": 100,
+            "soil_biome_impact": "Promotes fungi",
+            "soil_remediation": "None",
+            "spectral_absorption": "Green wavelengths",
+            "uv_protection": "High anthocyanin content",
+            "genetic_diversity": 10,
+            "oxygen_production_mg_per_hr": 20,
+            "leaf_thickness_mm": 3.2
         },
         "benefits": {
             "air_quality": ["Removes benzene", "Removes formaldehyde"],
@@ -114,30 +133,17 @@
             "climate_resilience": "High (drought-tolerant)",
             "disease_resistance_level": "Moderate"
         },
-        "practical": {
-            "hardiness_zones": [9, 11],
+        "ownership": {
             "cost_usd": 15,
-            "pot_size_in": [6, 8],
-            "repot_yrs": 2,
-            "availability": "Common"
-        },
-        "propagation": {
-            "methods": ["Cuttings", "Division"],
-            "success_rate": "High",
-            "season": "Spring",
-            "germination_days": 14
-        },
-        "seasonal": {
-            "phenology": "Growth year-round",
-            "bloom_time": "Rare, summer",
-            "fruit_yield": "None",
-            "leaf_color_changes": "No"
-        },
-        "user_interaction": {
-            "maintenance_level": "Low",
-            "care_tips": ["Avoid overwatering", "Clean leaves monthly"],
+            "availability": "Common",
             "child_friendly": true,
             "smell_profile": "Neutral"
+        },
+        "maintenance": {
+            "maintenance_level": "Low",
+            "pot_size_in": [6, 8],
+            "repot_frequency_yrs": 2,
+            "care_tips": ["Avoid overwatering", "Clean leaves monthly"]
         },
         "historical": {
             "cultivation_origin": "Unknown",
