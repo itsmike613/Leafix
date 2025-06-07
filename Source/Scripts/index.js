@@ -130,7 +130,7 @@ const updateInspectTab = plant => {
                     <div class="row justify-content-between align-items-center">
                         <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Category</span>
-                            <span class="d-block text-sm text-muted">${plant.classification?.category.join(', ')}</span>
+                            <span class="d-block text-sm text-muted">${plant.classification?.category}</span>
                         </div>
                         <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Growth Habit</span>
