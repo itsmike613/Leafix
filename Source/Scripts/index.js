@@ -119,9 +119,9 @@ const updateInspectTab = plant => {
                 <div class="card-body">
                     <div class="list-group-item d-flex align-items-center justify-content-between">
                         <div class="d-flex align-items-center gap-3">
-                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-magnifying-glass"></i></div>
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-cube"></i></div>
                             <div>
-                                <span class="d-block text-heading text-sm fw-semibold">Identification</span>
+                                <span class="d-block text-heading text-sm fw-semibold">Classification</span>
                                 <span class="text-muted text-xs">The plant’s naming and classification details</span>
                             </div>
                         </div>
@@ -129,28 +129,24 @@ const updateInspectTab = plant => {
                     <hr class="my-4">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">
-                                Names <i class="ph ph-info ms-1" title="Common names used for the plant"></i>
-                            </span>
-                            <span class="d-block text-sm text-muted">${plant.identification?.names.join(', ')}</span>
+                            <span class="d-block h6 text-heading mb-0">Category</span>
+                            <span class="d-block text-sm text-muted">${plant.classification?.category.join(', ')}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">
-                                Scientific name <i class="ph ph-info ms-1" title="The official Latin name of the plant"></i>
-                            </span>
-                            <span class="d-block text-sm text-muted">${plant.identification?.sci_name}</span>
+                            <span class="d-block h6 text-heading mb-0">Growth Habit</span>
+                            <span class="d-block text-sm text-muted">${plant.classification?.growth_habit}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Family</span>
-                            <span class="d-block text-sm text-muted">${plant.identification?.family}</span>
+                            <span class="d-block h6 text-heading mb-0">Lifecycle Type</span>
+                            <span class="d-block text-sm text-muted">${plant.classification?.lifecycle_type}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Cultivar</span>
-                            <span class="d-block text-sm text-muted">${plant.identification?.cultivar}</span>
+                            <span class="d-block h6 text-heading mb-0">Placement</span>
+                            <span class="d-block text-sm text-muted">${plant.classification?.placement}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Synonyms</span>
-                            <span class="d-block text-sm text-muted">${plant.identification?.synonyms.join(', ')}</span>
+                            <span class="d-block h6 text-heading mb-0">Evergreen</span>
+                            <span class="d-block text-sm text-muted">${plant.classification?.evergreen}</span>
                         </div>
                     </div>
                 </div>
@@ -164,7 +160,7 @@ const updateInspectTab = plant => {
                 `).join('')}
             </div>
         `;
-    })() : '<p>No plant selected. Please select a plant from the Database tab.</p><button class="btn btn-sm btn-primary" id="go-to-database">Go to Database</button>';
+    })() : '<p>No plant selected. Please select a plant from the Database tab.</p><button class="btn btn-sm btn-primary mt-5" id="go-to-database">Go to Database</button>';
 };
 
 const setupEventListeners = () => {
