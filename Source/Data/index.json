@@ -18,7 +18,7 @@
             "growth_habit": "Upright",
             "lifecycle_type": "Perennial",
             "placement": "Indoor & Outdoor",
-            "evergreen": true,
+            "evergreen": "Yes",
             "hardiness_zones": [9, 11]
         },
         "growth": {
@@ -50,10 +50,12 @@
                 "misting": "Not required"
             },
             "watering": {
-                "frequency": "Every 14–28 days",
-                "amount_ml": 100,
+                "base_frequency_days": 21,
+                "frequency_range_days": [14, 28],
+                "amount_ml_per_liter_pot_volume": 50,
                 "moisture_preference": "Dry between watering",
-                "method": "Bottom watering"
+                "method": "Bottom watering",
+                "notes": "Adjust water amount based on pot size and plant maturity"
             },
             "soil": {
                 "type": "Well-draining",
@@ -72,8 +74,7 @@
                 "frequency": "As needed",
                 "method": "Cut damaged leaves at base",
                 "season": "Any"
-            },
-            "dormancy_period": "None"
+            }
         },
         "propagation": {
             "methods": ["Cuttings", "Division"],
@@ -134,7 +135,8 @@
             "disease_resistance_level": "Moderate"
         },
         "ownership": {
-            "cost_usd": 15,
+            "cost_usd_avg": 20,
+            "cost_usd_range": [15, 40],
             "availability": "Common",
             "child_friendly": true,
             "smell_profile": "Neutral"
