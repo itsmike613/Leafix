@@ -96,13 +96,13 @@
             "photosynthetic_rate": 2.5,
             "water_use_efficiency_g_l": 5.0,
             "nutrient_uptake": {
-                "nitrogen": {"amount_mg_per_kg": 10, "role": "Macronutrient, growth"},
-                "phosphorus": {"amount_mg_per_kg": 5, "role": "Macronutrient, root development"},
-                "potassium": {"amount_mg_per_kg": 15, "role": "Macronutrient, water regulation"},
-                "calcium": {"amount_mg_per_kg": 8, "role": "Cell wall strength"},
-                "magnesium": {"amount_mg_per_kg": 4, "role": "Chlorophyll component"},
-                "iron": {"amount_mg_per_kg": 0.3, "role": "Enzyme function"},
-                "zinc": {"amount_mg_per_kg": 0.05, "role": "Growth regulation"}
+                "nitrogen": {"estimate": 10, "range": [8, 12], "role": "Macronutrient, growth"},
+                "phosphorus": {"estimate": 5, "range": [3, 7], "role": "Macronutrient, root development"},
+                "potassium": {"estimate": 15, "range": [12, 18], "role": "Macronutrient, water regulation"},
+                "calcium": {"estimate": 8, "range": [6, 10], "role": "Cell wall strength"},
+                "magnesium": {"estimate": 4, "range": [3, 6], "role": "Chlorophyll component"},
+                "iron": {"estimate": 0.3, "range": [0.2, 0.4], "role": "Enzyme function"},
+                "zinc": {"estimate": 0.05, "range": [0.03, 0.07], "role": "Growth regulation"}
             },
             "leaf_surface_area_cm2": 200,
             "co2_reduction_ppm": 0.7,
