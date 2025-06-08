@@ -152,6 +152,472 @@ const updateInspectTab = plant => {
                 </div>
             </div>
 
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-ruler"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Growth</span>
+                                <span class="text-muted text-xs">Physical characteristics and growth patterns</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Height (in) <i class="ph ph-info ms-1" title="Typical height range in inches"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.growth?.height_in.join(' - ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Width (in) <i class="ph ph-info ms-1" title="Typical width range in inches"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.growth?.width_in.join(' - ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Growth Rate <i class="ph ph-info ms-1" title="Speed of plant growth"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.growth?.growth_rate}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Lifespan (yrs) <i class="ph ph-info ms-1" title="Expected lifespan in years"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.growth?.lifespan_yrs.join(' - ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Root Depth (cm) <i class="ph ph-info ms-1" title="Typical root depth in centimeters"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.growth?.root_depth_cm}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Phenology <i class="ph ph-info ms-1" title="Seasonal growth patterns"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.growth?.phenology}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Bloom Time <i class="ph ph-info ms-1" title="When the plant typically blooms"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.growth?.bloom_time}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Fruit Yield <i class="ph ph-info ms-1" title="Fruit production capacity"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.growth?.fruit_yield}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Leaf Color Changes <i class="ph ph-info ms-1" title="Whether leaves change color seasonally"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.growth?.leaf_color_changes}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-drop"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Care</span>
+                                <span class="text-muted text-xs">Optimal conditions for plant health</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Light Level <i class="ph ph-info ms-1" title="Preferred light conditions"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.light?.level}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Light (lux) <i class="ph ph-info ms-1" title="Light intensity range in lux"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.light?.lux_range.join(' - ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Sun Tolerance <i class="ph ph-info ms-1" title="Ability to tolerate direct sunlight"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.light?.sun_tolerance}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Temperature (°F) <i class="ph ph-info ms-1" title="Acceptable temperature range in Fahrenheit"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.temperature?.min_f} - ${plant.care?.temperature?.max_f}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Humidity (%) <i class="ph ph-info ms-1" title="Acceptable humidity range in percentage"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.humidity?.min_percent} - ${plant.care?.humidity?.max_percent}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Misting <i class="ph ph-info ms-1" title="Need for misting to maintain humidity"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.humidity?.misting}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Watering Frequency (days) <i class="ph ph-info ms-1" title="Days between watering"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.watering?.frequency_range_days.join(' - ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Water Amount (ml/L pot) <i class="ph ph-info ms-1" title="Water volume per liter of pot size"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.watering?.amount_ml_per_liter_pot_volume}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Moisture Preference <i class="ph ph-info ms-1" title="Preferred soil moisture level"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.watering?.moisture_preference}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Watering Method <i class="ph ph-info ms-1" title="Recommended watering technique"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.watering?.method}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Soil Type <i class="ph ph-info ms-1" title="Preferred soil composition"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.soil?.type}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Soil pH <i class="ph ph-info ms-1" title="Acceptable soil pH range"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.soil?.pH_min} - ${plant.care?.soil?.pH_max}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Soil Components <i class="ph ph-info ms-1" title="Key materials in soil mix"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.soil?.components.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Drainage Rate <i class="ph ph-info ms-1" title="Speed of water drainage in soil"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.soil?.drainage_rate}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Fertilizer Type <i class="ph ph-info ms-1" title="Recommended fertilizer composition"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.fertilizer?.type}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Fertilizer Frequency <i class="ph ph-info ms-1" title="How often to fertilize"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.fertilizer?.frequency}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Pruning Frequency <i class="ph ph-info ms-1" title="How often to prune"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.pruning?.frequency}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Pruning Method <i class="ph ph-info ms-1" title="Recommended pruning technique"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.pruning?.method}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-seedling"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Propagation</span>
+                                <span class="text-muted text-xs">Methods to reproduce the plant</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Methods <i class="ph ph-info ms-1" title="Techniques for plant propagation"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.propagation?.methods.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Success Rate <i class="ph ph-info ms-1" title="Likelihood of propagation success"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.propagation?.success_rate}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Season <i class="ph ph-info ms-1" title="Best time for propagation"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.propagation?.season}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Germination (days) <i class="ph ph-info ms-1" title="Time for seeds to sprout"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.propagation?.germination_days}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-globe"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Ecology</span>
+                                <span class="text-muted text-xs">Environmental interactions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Native Region <i class="ph ph-info ms-1" title="Geographic origin of the plant"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ecology?.native_region}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Invasive Status <i class="ph ph-info ms-1" title="Potential to spread aggressively"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ecology?.invasive_status}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Pollinators <i class="ph ph-info ms-1" title="Species that pollinate the plant"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ecology?.pollinators.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Biodiversity Index <i class="ph ph-info ms-1" title="Impact on local biodiversity"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ecology?.biodiversity_index}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Soil Stabilization <i class="ph ph-info ms-1" title="Ability to prevent soil erosion"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ecology?.soil_stabilization}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Urban Tolerance <i class="ph ph-info ms-1" title="Adaptability to urban environments"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ecology?.urban_tolerance}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-flask"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Science</span>
+                                <span class="text-muted text-xs">Biological and chemical properties</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Photosynthetic Rate <i class="ph ph-info ms-1" title="Rate of photosynthesis in µmol/m²/s"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.photosynthetic_rate}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Water Use Efficiency (g/L) <i class="ph ph-info ms-1" title="Grams of biomass per liter of water"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.water_use_efficiency_g_l}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Leaf Surface Area (cm²) <i class="ph ph-info ms-1" title="Total leaf surface area"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.leaf_surface_area_cm2}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">CO2 Reduction (ppm) <i class="ph ph-info ms-1" title="CO2 reduction in parts per million"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.co2_reduction_ppm}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Carbon Sequestration (g/yr) <i class="ph ph-info ms-1" title="Carbon stored per year in grams"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.carbon_sequestration_g_per_year}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Soil Biome Impact <i class="ph ph-info ms-1" title="Effect on soil microbial communities"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.soil_biome_impact}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">UV Protection <i class="ph ph-info ms-1" title="Plant's UV resistance mechanism"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.uv_protection}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Genetic Diversity <i class="ph ph-info ms-1" title="Measure of genetic variation"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.genetic_diversity}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Oxygen Production (mg/hr) <i class="ph ph-info ms-1" title="Oxygen produced per hour"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.oxygen_production_mg_per_hr}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Leaf Thickness (mm) <i class="ph ph-info ms-1" title="Average leaf thickness"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.leaf_thickness_mm}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-leaf"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Benefits</span>
+                                <span class="text-muted text-xs">Advantages for environment and humans</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Air Quality <i class="ph ph-info ms-1" title="Pollutants the plant can remove"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.benefits?.air_quality.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Ecological Benefits <i class="ph ph-info ms-1" title="Environmental advantages"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.benefits?.ecological.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Mental Health <i class="ph ph-info ms-1" title="Psychological benefits"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.benefits?.mental_health.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Cultural Significance <i class="ph ph-info ms-1" title="Cultural or symbolic meaning"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.benefits?.cultural.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Medicinal Value <i class="ph ph-info ms-1" title="Medicinal uses, if any"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.benefits?.medicinal}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Economic Value <i class="ph ph-info ms-1" title="Commercial or ornamental value"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.benefits?.economic_value}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Feng Shui <i class="ph ph-info ms-1" title="Feng Shui benefits"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.benefits?.feng_shui}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Pet Safe <i class="ph ph-info ms-1" title="Safety for pets"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.benefits?.pet_safe_certified ? 'Yes' : 'No'}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-heartbeat"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Health</span>
+                                <span class="text-muted text-xs">Potential risks and resilience</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Toxicity <i class="ph ph-info ms-1" title="Toxicity level to humans or pets"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.health?.toxicity}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Pests <i class="ph ph-info ms-1" title="Common pests affecting the plant"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.health?.pests.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Diseases <i class="ph ph-info ms-1" title="Common diseases affecting the plant"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.health?.diseases.join(', ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Allergen Potential <i class="ph ph-info ms-1" title="Likelihood of causing allergies"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.health?.allergen_potential}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Climate Resilience <i class="ph ph-info ms-1" title="Ability to withstand climate challenges"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.health?.climate_resilience}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Disease Resistance <i class="ph ph-info ms-1" title="Resistance to common diseases"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.health?.disease_resistance_level}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-coin"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Ownership</span>
+                                <span class="text-muted text-xs">Cost and suitability</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Average Cost (USD) <i class="ph ph-info ms-1" title="Typical purchase price"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ownership?.cost_usd_avg}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Cost Range (USD) <i class="ph ph-info ms-1" title="Price range for purchase"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ownership?.cost_usd_range.join(' - ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Availability <i class="ph ph-info ms-1" title="Ease of finding the plant"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ownership?.availability}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Child-Friendly <i class="ph ph-info ms-1" title="Safety for children"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ownership?.child_friendly ? 'Yes' : 'No'}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Smell Profile <i class="ph ph-info ms-1" title="Plant's scent characteristics"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.ownership?.smell_profile}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-wrench"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Maintenance</span>
+                                <span class="text-muted text-xs">Care requirements</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Maintenance Level <i class="ph ph-info ms-1" title="Level of care required"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.maintenance?.maintenance_level}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Pot Size (in) <i class="ph ph-info ms-1" title="Recommended pot size range"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.maintenance?.pot_size_in.join(' - ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Repotting Frequency (yrs) <i class="ph ph-info ms-1" title="How often to repot"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.maintenance?.repot_frequency_yrs}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Care Tips <i class="ph ph-info ms-1" title="Additional care recommendations"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.maintenance?.care_tips.join(', ')}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-books"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Historical</span>
+                                <span class="text-muted text-xs">Cultural and historical context</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Cultivation Origin <i class="ph ph-info ms-1" title="Where cultivation began"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.historical?.cultivation_origin}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Ethnobotanical Use <i class="ph ph-info ms-1" title="Traditional cultural uses"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.historical?.ethnobotanical}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">First Documented <i class="ph ph-info ms-1" title="Year of first recorded use"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.historical?.first_documented}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Traditional Medicine <i class="ph ph-info ms-1" title="Historical medicinal uses"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.historical?.traditional_medicine.join(', ')}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <p>Ideal Temp Range: ${plant.care?.temperature?.optimal_f.join(' - ') || 'N/A'}%
             <div class="d-flex align-items-center gap-2">
                 <img src="${plant.media?.thumbnail}" class="avatar object-cover" style="height: 100px; width: 70px;">
