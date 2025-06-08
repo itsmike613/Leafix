@@ -84,31 +84,27 @@ const updateInspectTab = plant => {
                     <hr class="my-4">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">
-                                Names <i class="ph ph-info ms-1" title="Common names used for the plant"></i>
-                            </span>
+                            <span class="d-block h6 text-heading mb-0">Names <i class="ph ph-info ms-1" title="Common names used for the plant"></i></span>
                             <span class="d-block text-sm text-muted">${plant.identification?.names.join(', ')}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">
-                                Scientific name <i class="ph ph-info ms-1" title="The official Latin name of the plant"></i>
-                            </span>
+                            <span class="d-block h6 text-heading mb-0">Scientific Name <i class="ph ph-info ms-1" title="The official Latin name of the plant"></i></span>
                             <span class="d-block text-sm text-muted">${plant.identification?.sci_name}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Family</span>
+                            <span class="d-block h6 text-heading mb-0">Family <i class="ph ph-info ms-1" title="Botanical family the plant belongs to"></i></span>
                             <span class="d-block text-sm text-muted">${plant.identification?.family}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Cultivar</span>
+                            <span class="d-block h6 text-heading mb-0">Cultivar <i class="ph ph-info ms-1" title="Specific cultivated variety of the plant"></i></span>
                             <span class="d-block text-sm text-muted">${plant.identification?.cultivar}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Genus</span>
+                            <span class="d-block h6 text-heading mb-0">Genus <i class="ph ph-info ms-1" title="Genus classification of the plant"></i></span>
                             <span class="d-block text-sm text-muted">${plant.identification?.genus}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Synonyms</span>
+                            <span class="d-block h6 text-heading mb-0">Synonyms <i class="ph ph-info ms-1" title="Alternate scientific names for the plant"></i></span>
                             <span class="d-block text-sm text-muted">${plant.identification?.synonyms.join(', ')}</span>
                         </div>
                     </div>
@@ -129,23 +125,23 @@ const updateInspectTab = plant => {
                     <hr class="my-4">
                     <div class="row justify-content-between align-items-center">
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Category</span>
+                            <span class="d-block h6 text-heading mb-0">Category <i class="ph ph-info ms-1" title="Broad plant type classification"></i></span>
                             <span class="d-block text-sm text-muted">${plant.classification?.category}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Growth Habit</span>
+                            <span class="d-block h6 text-heading mb-0">Growth Habit <i class="ph ph-info ms-1" title="Typical growth pattern or shape"></i></span>
                             <span class="d-block text-sm text-muted">${plant.classification?.growth_habit}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Lifecycle Type</span>
+                            <span class="d-block h6 text-heading mb-0">Lifecycle Type <i class="ph ph-info ms-1" title="Duration and nature of life cycle"></i></span>
                             <span class="d-block text-sm text-muted">${plant.classification?.lifecycle_type}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Placement</span>
+                            <span class="d-block h6 text-heading mb-0">Placement <i class="ph ph-info ms-1" title="Suitable growing environment"></i></span>
                             <span class="d-block text-sm text-muted">${plant.classification?.placement}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Evergreen</span>
+                            <span class="d-block h6 text-heading mb-0">Evergreen <i class="ph ph-info ms-1" title="Whether the plant retains leaves year-round"></i></span>
                             <span class="d-block text-sm text-muted">${plant.classification?.evergreen}</span>
                         </div>
                     </div>
