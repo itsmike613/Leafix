@@ -383,23 +383,23 @@ const updateInspectTab = plant => {
                     <div class="row justify-content-between align-items-center">
                         <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Photosynthetic Rate <i class="ph ph-info ms-1" title="Rate of photosynthesis in µmol/m²/s"></i></span>
-                            <span class="d-block text-sm text-muted">${plant.science?.photosynthetic_rate}</span>
+                            <span class="d-block text-sm text-muted">${plant.science?.photosynthetic_rate?.estimate} (${plant.science?.photosynthetic_rate?.range?.[0]}–${plant.science?.photosynthetic_rate?.range?.[1]})</span>
                         </div>
                         <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Water Use Efficiency (g/L) <i class="ph ph-info ms-1" title="Grams of biomass per liter of water"></i></span>
-                            <span class="d-block text-sm text-muted">${plant.science?.water_use_efficiency_g_l}</span>
+                            <span class="d-block text-sm text-muted">${plant.science?.water_use_efficiency_g_l?.estimate} (${plant.science?.water_use_efficiency_g_l?.range?.[0]}–${plant.science?.water_use_efficiency_g_l?.range?.[1]})</span>
                         </div>
                         <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Leaf Surface Area (cm²) <i class="ph ph-info ms-1" title="Total leaf surface area"></i></span>
-                            <span class="d-block text-sm text-muted">${plant.science?.leaf_surface_area_cm2}</span>
+                            <span class="d-block text-sm text-muted">${plant.science?.leaf_surface_area_cm2?.estimate} (${plant.science?.leaf_surface_area_cm2?.range?.[0]}–${plant.science?.leaf_surface_area_cm2?.range?.[1]})</span>
                         </div>
                         <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">CO2 Reduction (ppm) <i class="ph ph-info ms-1" title="CO2 reduction in parts per million"></i></span>
-                            <span class="d-block text-sm text-muted">${plant.science?.co2_reduction_ppm}</span>
+                            <span class="d-block text-sm text-muted">${plant.science?.co2_reduction_ppm?.estimate} (${plant.science?.co2_reduction_ppm?.range?.[0]}–${plant.science?.co2_reduction_ppm?.range?.[1]})</span>
                         </div>
                         <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Carbon Sequestration (g/yr) <i class="ph ph-info ms-1" title="Carbon stored per year in grams"></i></span>
-                            <span class="d-block text-sm text-muted">${plant.science?.carbon_sequestration_g_per_year}</span>
+                            <span class="d-block text-sm text-muted">${plant.science?.carbon_sequestration_g_per_year?.estimate} (${plant.science?.carbon_sequestration_g_per_year?.range?.[0]}–${plant.science?.carbon_sequestration_g_per_year?.range?.[1]})</span>
                         </div>
                         <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Soil Biome Impact <i class="ph ph-info ms-1" title="Effect on soil microbial communities"></i></span>
