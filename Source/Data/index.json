@@ -93,8 +93,8 @@
             "urban_tolerance": "High"
         },
         "science": {
-            "photosynthetic_rate": 2.5,
-            "water_use_efficiency_g_l": 5.0,
+            "photosynthetic_rate": {"estimate": 2.5, "range": [2.0, 3.0]},
+            "water_use_efficiency_g_l": {"estimate": 5.0, "range": [4.5, 5.5]},
             "nutrient_uptake": {
                 "nitrogen": {"estimate": 10, "range": [8, 12], "role": "Macronutrient, growth"},
                 "phosphorus": {"estimate": 5, "range": [3, 7], "role": "Macronutrient, root development"},
@@ -104,16 +104,16 @@
                 "iron": {"estimate": 0.3, "range": [0.2, 0.4], "role": "Enzyme function"},
                 "zinc": {"estimate": 0.05, "range": [0.03, 0.07], "role": "Growth regulation"}
             },
-            "leaf_surface_area_cm2": 200,
-            "co2_reduction_ppm": 0.7,
-            "carbon_sequestration_g_per_year": 100,
+            "leaf_surface_area_cm2": {"estimate": 200, "range": [180, 220]},
+            "co2_reduction_ppm": {"estimate": 0.7, "range": [0.5, 0.9]},
+            "carbon_sequestration_g_per_year": {"estimate": 100, "range": [90, 110]},
             "soil_biome_impact": "Promotes fungi",
             "soil_remediation": "None",
             "spectral_absorption": "Green wavelengths",
             "uv_protection": "High anthocyanin content",
-            "genetic_diversity": 10,
-            "oxygen_production_mg_per_hr": 20,
-            "leaf_thickness_mm": 3.2
+            "genetic_diversity": {"estimate": 0.6, "range": [0.5, 0.7]},
+            "oxygen_production_mg_per_hr": {"estimate": 25, "range": [20, 30]},
+            "leaf_thickness_mm": {"estimate": 1.5, "range": [1.2, 1.8]}
         },
         "benefits": {
             "air_quality": ["Removes benzene", "Removes formaldehyde"],
