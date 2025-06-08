@@ -235,6 +235,10 @@ const updateInspectTab = plant => {
                             <span class="d-block text-sm text-muted">${plant.care?.temperature?.min_f} - ${plant.care?.temperature?.max_f}</span>
                         </div>
                         <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Ideal Temp Range (°F) <i class="ph ph-info ms-1" title="Acceptable temperature range in Fahrenheit"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.care?.temperature?.optimal_f.join(' - ')}</span>
+                        </div>
+                        <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Humidity (%) <i class="ph ph-info ms-1" title="Acceptable humidity range in percentage"></i></span>
                             <span class="d-block text-sm text-muted">${plant.care?.humidity?.min_percent} - ${plant.care?.humidity?.max_percent}</span>
                         </div>
@@ -618,12 +622,25 @@ const updateInspectTab = plant => {
                 </div>
             </div>
 
-            <p>Ideal Temp Range: ${plant.care?.temperature?.optimal_f.join(' - ') || 'N/A'}%
-            <div class="d-flex align-items-center gap-2">
-                <img src="${plant.media?.thumbnail}" class="avatar object-cover" style="height: 100px; width: 70px;">
-                ${plant.media?.images?.map(img => `
-                    <img src="${img}" class="avatar object-cover" style="height: 100px; width: 70px;">
-                `).join('')}
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="list-group-item d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-images-square"></i></div>
+                            <div>
+                                <span class="d-block text-heading text-sm fw-semibold">Historical</span>
+                                <span class="text-muted text-xs">Cultural and historical context</span>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="d-flex align-items-center gap-2">
+                        <img src="${plant.media?.thumbnail}" class="avatar object-cover" style="height: 100px; width: 70px;">
+                        ${plant.media?.images?.map(img => `
+                            <img src="${img}" class="avatar object-cover" style="height: 100px; width: 70px;">
+                        `).join('')}
+                    </div>
+                </div>
             </div>
         `;
     })() : '<p>No plant selected. Please select a plant from the Database tab.</p><button class="btn btn-sm btn-primary mt-5" id="go-to-database">Go to Database</button>';
