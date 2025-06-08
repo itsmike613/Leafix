@@ -628,8 +628,8 @@ const updateInspectTab = plant => {
                         <div class="d-flex align-items-center gap-3">
                             <div class="icon icon-shape rounded flex-none text-sm text-bg-light"><i class="ph ph-images-square"></i></div>
                             <div>
-                                <span class="d-block text-heading text-sm fw-semibold">Historical</span>
-                                <span class="text-muted text-xs">Cultural and historical context</span>
+                                <span class="d-block text-heading text-sm fw-semibold">Media</span>
+                                <span class="text-muted text-xs">Images of the plant</span>
                             </div>
                         </div>
                     </div>
