@@ -231,7 +231,7 @@ const updateInspectTab = plant => {
                             <span class="d-block text-sm text-muted">${plant.care?.temperature?.min_f} - ${plant.care?.temperature?.max_f}</span>
                         </div>
                         <div class="col-6 mb-2">
-                            <span class="d-block h6 text-heading mb-0">Ideal Temp Range (°F) <i class="ph ph-info ms-1" title="Acceptable temperature range in Fahrenheit"></i></span>
+                            <span class="d-block h6 text-heading mb-0">Ideal Temp Range (°F) <i class="ph ph-info ms-1" title="Ideal temperature range in Fahrenheit"></i></span>
                             <span class="d-block text-sm text-muted">${plant.care?.temperature?.optimal_f.join(' - ')}</span>
                         </div>
                         <div class="col-6 mb-2">
@@ -420,6 +420,37 @@ const updateInspectTab = plant => {
                         <div class="col-6 mb-2">
                             <span class="d-block h6 text-heading mb-0">Leaf Thickness (mm) <i class="ph ph-info ms-1" title="Average leaf thickness"></i></span>
                             <span class="d-block text-sm text-muted">${plant.science?.leaf_thickness_mm}</span>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Nitrogen Uptake (mg/kg) <i class="ph ph-info ms-1" title="Amount and role of nitrogen absorbed"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.nutrient_uptake?.nitrogen?.amount_mg_per_kg} - ${plant.science?.nutrient_uptake?.nitrogen?.role}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Phosphorus Uptake (mg/kg) <i class="ph ph-info ms-1" title="Amount and role of phosphorus absorbed"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.nutrient_uptake?.phosphorus?.amount_mg_per_kg} - ${plant.science?.nutrient_uptake?.phosphorus?.role}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Potassium Uptake (mg/kg) <i class="ph ph-info ms-1" title="Amount and role of potassium absorbed"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.nutrient_uptake?.potassium?.amount_mg_per_kg} - ${plant.science?.nutrient_uptake?.potassium?.role}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Calcium Uptake (mg/kg) <i class="ph ph-info ms-1" title="Amount and role of calcium absorbed"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.nutrient_uptake?.calcium?.amount_mg_per_kg} - ${plant.science?.nutrient_uptake?.calcium?.role}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Magnesium Uptake (mg/kg) <i class="ph ph-info ms-1" title="Amount and role of magnesium absorbed"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.nutrient_uptake?.magnesium?.amount_mg_per_kg} - ${plant.science?.nutrient_uptake?.magnesium?.role}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Iron Uptake (mg/kg) <i class="ph ph-info ms-1" title="Amount and role of iron absorbed"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.nutrient_uptake?.iron?.amount_mg_per_kg} - ${plant.science?.nutrient_uptake?.iron?.role}</span>
+                        </div>
+                        <div class="col-6 mb-2">
+                            <span class="d-block h6 text-heading mb-0">Zinc Uptake (mg/kg) <i class="ph ph-info ms-1" title="Amount and role of zinc absorbed"></i></span>
+                            <span class="d-block text-sm text-muted">${plant.science?.nutrient_uptake?.zinc?.amount_mg_per_kg} - ${plant.science?.nutrient_uptake?.zinc?.role}</span>
                         </div>
                     </div>
                 </div>
